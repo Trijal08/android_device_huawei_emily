@@ -41,7 +41,11 @@
     <value>5.0</value>
     <value>5.0</value>
   </array>
-  <array name="cpu.speeds">
+  <array name="cpu.clusters.cores">
+    <value>4</value> <!-- cluster 0 has cpu0, cpu1, cpu2, cpu3 -->
+    <value>4</value> <!-- cluster 1 has cpu4, cpu5, cpu6, cpu7 -->
+  </array>
+  <array name="cpu.core_speeds.cluster0">
     <value>533000</value> <!-- 533 MHz CPU speed -->
     <value>999000</value> <!-- 999 MHz CPU speed -->
     <value>1402000</value> <!-- 1.4 GHz CPU speed -->
@@ -52,11 +56,11 @@
     <value>2612000</value><!-- 2.6 GHz CPU speed -->
   </array>
   <!-- Power consumption in suspend -->
-  <item name="cpu.idle">5</item> <!-- k3v5 -->
+  <item name="cpu.suspend">5</item> <!-- k3v5 -->
   <!-- Power consumption due to wake lock held -->
-  <item name="cpu.awake">21</item> <!-- k3v5 -->
+  <item name="cpu.idle">21</item> <!-- k3v5 -->
   <!-- Power consumption at different speeds -->
-  <array name="cpu.active">
+  <array name="cpu.core_power.cluster0">
     <value>30</value>
     <value>72</value>
     <value>133</value>
