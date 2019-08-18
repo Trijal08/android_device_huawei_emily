@@ -106,6 +106,9 @@ BOARD_ROOT_EXTRA_FOLDERS += \
     sec_storage \
     splash2
 
+# Security patch level
+VENDOR_SECURITY_PATCH := 2022-06-01
+
 # SEPolicy
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
