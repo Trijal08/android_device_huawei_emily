@@ -35,5 +35,7 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
 # Inherit the proprietary files
 $(call inherit-product, vendor/huawei/charlotte/charlotte-vendor.mk)
