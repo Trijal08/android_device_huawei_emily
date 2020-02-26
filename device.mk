@@ -9,6 +9,10 @@
 PRODUCT_AAPT_CONFIG := normal 
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
+# fastbootd
+PRODUCT_PACKAGES += \
+    fastbootd
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.kirin970 \
