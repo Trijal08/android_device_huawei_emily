@@ -518,6 +518,7 @@ on post-fs
     chmod 0660 /proc/uid_iostats/remove_uid_list
 
 on post-fs-data
+    setprop init.svc.console stopped
     mkdir /data/vendor/nfc 0770 nfc nfc
     restorecon_recursive /data/vendor/nfc
 
