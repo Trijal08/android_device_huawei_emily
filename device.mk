@@ -54,6 +54,9 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl \
     android.hardware.bluetooth@1.0-service
 
+# Bootanimation
+TARGET_BOOTANIMATION_HALF_RES := true
+
 # Fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
