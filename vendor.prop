@@ -11,6 +11,9 @@ ro.opengles.version=196610
 # fastbootd
 ro.fastbootd.available=true
 
+# Recovery
+ro.recovery.ui.blank_unblank_on_init=true
+
 # SurfaceFlinger
 debug.sf.latch_unsignaled=1
 debug.sf.enable_gl_backpressure=1
