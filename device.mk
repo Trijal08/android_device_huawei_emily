@@ -271,10 +271,8 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/interfaces \
     hardware/google/pixel
 
-# Tee
-#PRODUCT_PACKAGES += \
-#    vendor.huawei.hardware.libteec@2.0 \
-#    vendor.huawei.hardware.libteec@2.0.vendor
+# Speed profile services and wifi-service to reduce RAM and storage
+PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
 
 # Touch
 PRODUCT_PACKAGES += \
