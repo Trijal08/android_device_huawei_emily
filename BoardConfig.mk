@@ -137,6 +137,9 @@ SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/prebuilts/manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/prebuilts/compatibility_matrix.xml
 
+# Vulkan
+TARGET_USES_VULKAN := true
+
 # Wifi
 BOARD_HOSTAPD_DRIVER := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_bcmdhd
