@@ -50,6 +50,9 @@ drm.service.enabled=true
 # Fastbootd
 ro.fastbootd.available=true
 
+# Graphics
+ro.hwui.render_ahead=20
+
 # Power HAL
 vendor.powerhal.disp.idle_support=false
 
