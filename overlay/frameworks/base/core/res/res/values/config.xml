@@ -705,5 +705,10 @@
     <!-- Enables or disables haptic effect when the text insertion/selection handle is moved
         manually by the user. Off by default, since the expected haptic feedback may not be
         available on some devices. -->
-   <bool name="config_enableHapticTextHandle">true</bool>
+    <bool name="config_enableHapticTextHandle">true</bool>
+   
+    <!-- Indicate whether closing the lid causes the device to go to sleep and opening
+        it causes the device to wake up.
+         The default is false. -->
+    <bool name="config_lidControlsSleep">true</bool>
 </resources>
