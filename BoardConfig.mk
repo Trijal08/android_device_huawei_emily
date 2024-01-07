@@ -61,5 +61,8 @@ TARGET_BOARD_PLATFORM := kirin970
 # Properties
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
+# Releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)/releasetools
+
 # VNDK
 PRODUCT_USE_VNDK_OVERRIDE := true
