@@ -37,6 +37,9 @@ ro.fastbootd.available=true
 # Recovery
 ro.recovery.ui.blank_unblank_on_init=true
 
+# Media
+debug.stagefright.ccodec=0
+
 # SurfaceFlinger
 debug.sf.latch_unsignaled=1
 debug.sf.enable_gl_backpressure=1
