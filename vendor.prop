@@ -39,6 +39,7 @@ ro.recovery.ui.blank_unblank_on_init=true
 
 # Media
 debug.stagefright.ccodec=0
+media.stagefright.thumbnail.prefer_hw_codecs=true
 
 # SurfaceFlinger
 debug.sf.latch_unsignaled=1
