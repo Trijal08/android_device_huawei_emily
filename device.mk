@@ -80,6 +80,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.huawei.hardware.biometrics.fingerprint@2.2.vendor
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilts/fingerprint.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/fingerprint.kl
+
 PRODUCT_PACKAGES += \
     vendor.huawei.hardware.hwvibrator@1.0.vendor \
     libiawareperf_client
