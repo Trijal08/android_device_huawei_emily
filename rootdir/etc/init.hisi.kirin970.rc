@@ -126,6 +126,15 @@ service charger /system/bin/bms_animation
     group root system
     critical
     seclabel u:r:charger:s0
+
+service vendor.hwcomposer-2-2 /vendor/bin/hw/android.hardware.graphics.composer@2.2-service
+    override
+    class hal animation
+    user system
+    group graphics drmrpc
+    capabilities SYS_NICE
+    onrestart restart surfaceflinger
+    task_profiles HighPerformance
 	
 on property:ro.vendor.config.hw_vowifi=true
     start iked
