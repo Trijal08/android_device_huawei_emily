@@ -21,6 +21,10 @@ service vendor.ril-daemon /vendor/bin/hw/rild
     user root
     group radio cache inet misc audio log readproc wakelock system
     capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
+    disabled
+
+on property:sys.rilprops_ready=1
+    start vendor.ril-daemon
 
 on property:ro.boot.radio.multisim.config=dsds
     setprop persist.radio.multisim.config ${ro.boot.radio.multisim.config}
@@ -36,4 +40,3 @@ on property:ro.boot.product.hardware.sku=CLT-L29
 
 on property:ro.boot.product.hardware.sku=CLT-L0J
     setprop ro.odm.config.modem_number 1
-
