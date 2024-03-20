@@ -40,6 +40,9 @@ ro.fastbootd.available=true
 # Power HAL
 vendor.powerhal.disp.idle_support=false
 
+# Radio
+ro.telephony.default_network=9,9
+
 # Recovery
 ro.recovery.ui.blank_unblank_on_init=true
 
