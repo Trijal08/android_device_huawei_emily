@@ -12,3 +12,4 @@ ro.fastbootd.available=true
 debug.sf.latch_unsignaled=1
 debug.sf.enable_gl_backpressure=1
 ro.surface_flinger.running_without_sync_framework=true
+service.sf.prime_shader_cache=0
