@@ -195,6 +195,10 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.midi.xml \
     frameworks/native/data/etc/android.software.verified_boot.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.verified_boot.xml
 
+# Power
+PRODUCT_PACKAGES += \
+    android.hardware.power-service.pixel-libperfmgr
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.kirin970 \
@@ -219,7 +223,9 @@ PRODUCT_SHIPPING_API_LEVEL := 27
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    $(LOCAL_PATH)/resources
+    $(LOCAL_PATH)/resources \
+    hardware/google/interfaces \
+    hardware/google/pixel
 
 # Tee
 PRODUCT_PACKAGES += \

@@ -1,3 +1,8 @@
+on boot
+    # Power
+    setprop vendor.powerhal.init 1
+
+# Start services
 service aptouch /vendor/bin/aptouch_daemon
     user root
     group root system shell log wakelock

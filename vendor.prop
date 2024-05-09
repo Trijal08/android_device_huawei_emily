@@ -34,6 +34,9 @@ drm.service.enabled=true
 # fastbootd
 ro.fastbootd.available=true
 
+# Power HAL
+vendor.powerhal.disp.idle_support=false
+
 # Recovery
 ro.recovery.ui.blank_unblank_on_init=true
 
