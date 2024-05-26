@@ -106,8 +106,15 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libmockcasplugin
 
+# Misc
 PRODUCT_PACKAGES += \
     vendor.huawei.hardware.perfgenius@2.0.vendor
+
+PRODUCT_PACKAGES += \
+    libchrlog \
+    libhwlog \
+    libimonitor \
+    libxcollie
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
