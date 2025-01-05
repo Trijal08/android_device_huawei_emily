@@ -106,6 +106,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libmockcasplugin
 
+PRODUCT_PACKAGES += \
+    vendor.huawei.hardware.perfgenius@2.0.vendor
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \

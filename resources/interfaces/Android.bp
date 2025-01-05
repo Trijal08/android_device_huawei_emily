@@ -1,0 +1,4 @@
+hidl_package_root {
+    name: "vendor.huawei",
+    path: "device/huawei/sydney/resources/interfaces/huawei",
+}
