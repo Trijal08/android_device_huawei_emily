@@ -9,10 +9,6 @@
 PRODUCT_AAPT_CONFIG := normal 
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
-# Soong namespaces
-PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
-
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.kirin970 \
@@ -27,6 +23,13 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/init.recovery.kirin970.rc:$(TARGET_RECOVERY_OUT)/root/init.recovery.kirin970.rc
+
+# RRO
+PRODUCT_ENFORCE_RRO_TARGETS := *
+
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH)
 
 # Inherit the proprietary files
 $(call inherit-product, vendor/huawei/charlotte/charlotte-vendor.mk)
