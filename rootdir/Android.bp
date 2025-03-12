@@ -1,0 +1,26 @@
+//
+// Copyright (C) 2025 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+// fstab
+prebuilt_etc {
+    name: "fstab.kirin970",
+    src: "fstab.kirin970",
+    ramdisk_available: true,
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "fstab.modem",
+    src: "fstab.modem",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "ueventd.kirin970.rc",
+    filename: "ueventd.rc",
+    src: "etc/ueventd.kirin970.rc",
+    vendor: true,
+}

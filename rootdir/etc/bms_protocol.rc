@@ -1,0 +1,20 @@
+on init
+    chmod 0660 /sys/devices/virtual/hw_power/power_mesg/prot
+    chown system system /sys/devices/virtual/hw_power/power_mesg/prot
+    chmod 0660 /proc/power_ioctl/pd
+    chown system system /proc/power_ioctl/pd
+    chmod 0660 /proc/power_ioctl/fcp
+    chown system system /proc/power_ioctl/fcp
+    chmod 0660 /proc/power_ioctl/scp
+    chown system system /proc/power_ioctl/scp
+    chmod 0660 /proc/power_ioctl/uvdm
+    chown system system /proc/power_ioctl/uvdm
+    chmod 0660 /proc/power_ioctl/qi
+    chown system system /proc/power_ioctl/qi
+    start bms_protocol
+
+service bms_protocol /vendor/bin/bms_protocol
+    user system
+    group system
+    disabled
+    oneshot

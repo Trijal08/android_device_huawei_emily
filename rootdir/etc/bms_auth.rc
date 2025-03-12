@@ -1,0 +1,10 @@
+on init
+    chmod 0660 /sys/devices/virtual/hw_power/power_mesg/af
+    chown system system /sys/devices/virtual/hw_power/power_mesg/af
+    start bms_auth
+
+service bms_auth /vendor/bin/bms_auth
+    user system
+    group system
+    disabled
+    oneshot
