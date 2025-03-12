@@ -1,0 +1,228 @@
+service aptouch /vendor/bin/aptouch_daemon
+    user root
+    group root system shell log wakelock
+
+service hiaiserver /vendor/bin/hiaiserver
+    class late_start
+    user system
+    group system root wakelock
+
+service bms_alarm /vendor/bin/bms_alarm
+    user system
+    group system
+    disabled
+    oneshot
+
+service bms_auth /vendor/bin/bms_auth
+    user system
+    group system
+    disabled
+    oneshot
+
+service bms_behavior /vendor/bin/bms_behavior
+    user system
+    group system
+    disabled
+    oneshot
+
+service bms_event /vendor/bin/bms_event
+    user system
+    group system
+    disabled
+
+service bms_logcat /vendor/bin/bms_logcat
+    user system
+    group system
+    disabled
+    oneshot
+
+service bms_protocol /vendor/bin/bms_protocol
+    user system
+    group system
+    disabled
+    oneshot
+
+service bms_soc /vendor/bin/bms_soc
+    user system
+    group system
+    disabled
+    oneshot
+
+service bms_thermal /vendor/bin/bms_thermal
+    user system
+    group system
+    disabled
+    oneshot
+
+service bms_thermal_h /vendor/bin/bms_thermal -m 0
+    user system
+    group system
+    disabled
+    oneshot
+
+service bms_thermal_n /vendor/bin/bms_thermal -m 1
+    user system
+    group system
+    disabled
+    oneshot
+
+service bsoh /vendor/bin/bsoh
+    user system
+    group system
+    disabled
+
+service hisecd /vendor/bin/hisecd
+    class main
+    user system
+    group system radio root
+    socket hisecd stream 0660 system system
+    file /dev/kmsg w
+    writepid /dev/cpuset/system-background/tasks /dev/stune/system-background/tasks /dev/blkio/system-background/tasks
+    disabled
+
+service oeminfo_nvm /vendor/bin/oeminfo_nvm_server
+    class core
+    group system readproc root
+    critical
+    ioprio rt 4
+    seclabel u:r:oeminfo_nvm:s0
+
+service iked /vendor/bin/iked
+    interface vendor.huawei.hardware.iked@1.0::IIkedDevice default
+    class late_start
+    user root
+    disabled
+    group system wakelock
+    seclabel u:r:iked:s0
+
+service teecd /vendor/bin/teecd
+    class early_hal
+    user root
+    group root system readproc
+    seclabel u:r:tee:s0
+
+service hivwserver /vendor/bin/hivwserver
+    class vowifi
+    user system
+    group audio inet net_bt net_bt_admin net_bw_acct system
+
+service powerct /vendor/bin/powerct
+    user system
+    group system
+    disabled
+
+service usb_port /vendor/bin/usb_port
+    user system
+    group system
+    disabled
+    oneshot
+
+service usb_port_n /vendor/bin/usb_port -w 1
+    user system
+    group system
+    disabled
+    oneshot
+
+service charger /system/bin/bms_animation
+    class charger
+    user root
+    group root system
+    critical
+    seclabel u:r:charger:s0
+	
+on property:ro.vendor.config.hw_vowifi=true
+    start iked
+
+on property:odm.thp.service_enable=1
+    start aptouch
+
+on property:odm.thp.service_enable=0
+    stop aptouch
+
+on property:vendor.bms_event=init
+    start bms_heating
+    start bms_behavior
+
+on property:vendor.bms_event=start
+    start usb_port
+    start bms_heating
+    start bms_soc
+
+on property:vendor.bms_event=stop
+    stop usb_port
+    stop bms_heating
+    stop bms_soc
+    stop chargelogcat-c
+
+on property:vendor.bms_event_vote=start
+    start bms_auth
+    start bms_protocol
+    start bms_behavior
+
+on property:vendor.bms_event_vote=stop
+    stop bms_auth
+    stop bms_protocol
+
+on property:sys.factory_pwr_ctrl=true
+    setprop vendor.soc_ctrl_mmi_stop true
+
+on property:sys.factory_pwr_ctrl=false
+    setprop vendor.soc_ctrl_mmi_stop false
+
+# for customized version
+on property:ro.config.hw_power_ctrl=*
+    setprop vendor.soc_ctrl_cust ${ro.config.hw_power_ctrl}
+
+on property:vendor.hw_mc.bms.hw_power_ctrl=*
+    setprop vendor.soc_ctrl_cust ${vendor.hw_mc.bms.hw_power_ctrl}
+
+# for demo version
+on property:sys.demo_pwr_ctrl=*
+    setprop vendor.soc_ctrl_demo ${sys.demo_pwr_ctrl}
+
+on property:ro.config.bootincharge=*
+    setprop vendor.soc_ctrl_bootincharge ${ro.config.bootincharge}
+
+on property:vendor.hw_mc.bms.bootincharge=*
+    setprop vendor.soc_ctrl_bootincharge ${vendor.hw_mc.bms.bootincharge}
+
+on property:sys.bms_limit_mode=hota
+    start bms_thermal_h
+
+on property:sys.bms_limit_mode=normal
+    start bms_thermal_n
+
+on property:sys.boot_completed=1 && property:ro.runmode=normal
+    write /sys/class/hw_power/interface/iin_limit "bms_limit all 0"
+    write /sys/class/hw_power/interface/iin_thermal_all "bms_limit all 0"
+
+on property:sys.shutdown.requested=*
+    write sys/kernel/eas/boot_boost 1
+    write /config/usb_gadget/g1/functions/mass_storage.gs6/lun.0/file none
+
+on property:sys.boot_completed=1
+    setprop vendor.boot_completed 1
+    write /proc/self/reclaim file
+
+on property:ro.vendor.config.hw_vowifi=true
+    class_start vowifi
+
+on property:sys.usb.state=*
+    setprop vendor.get_usb_state ${sys.usb.state}
+
+on property:sys.usb.config=*
+    setprop vendor.get_usb_config ${sys.usb.config}
+
+on property:persist.sys.usb.config=*
+    setprop vendor.get_p_usb_config ${persist.sys.usb.config}
+
+on property:persist.sys.usb.rework=*
+    setprop vendor.get_p_usb_rework ${persist.sys.usb.rework}
+
+# transform vendor property to system property
+
+on property:vendor.set_usb_config=*
+    setprop sys.usb.config ${vendor.set_usb_config}
+
+on property:vendor.set_p_usb_config=*
+    setprop persist.sys.usb.config ${vendor.set_p_usb_config}

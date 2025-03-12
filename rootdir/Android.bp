@@ -19,6 +19,41 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
+    name: "init.connectivity.kirin970.rc",
+    src: "etc/init.connectivity.kirin970.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.hisi.kirin970.rc",
+    src: "etc/init.hisi.kirin970.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.kirin970.rc",
+    src: "etc/init.kirin970.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.modem.kirin970.rc",
+    src: "etc/init.modem.kirin970.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.usb.kirin970.rc",
+    src: "etc/init.usb.kirin970.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
     name: "ueventd.kirin970.rc",
     filename: "ueventd.rc",
     src: "etc/ueventd.kirin970.rc",

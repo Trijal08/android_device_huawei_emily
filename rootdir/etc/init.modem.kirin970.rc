@@ -1,0 +1,27 @@
+on fs
+    mkdir /mnt/modem 0755 root system
+    mkdir /mnt/modem/modem_secure 0755 root system
+    mkdir /mnt/modem/mnvm2:0 0755 root system
+    mount_all /vendor/etc/fstab.modem
+
+on post-fs
+    wait /sys/devices/platform/his_modem/modem_sysboot_start 30
+    chown radio radio sys/devices/platform/balong_power/state
+    chmod 0660 /dev/pmom
+    chown system system /dev/pmom
+
+on zygote-start
+    # When pureandroid test,The vold process will unmount mnt directory mounted partition ,
+    # so after the completion of the vold process started, mount_all modem partition and then boot modem.
+    mount_all /vendor/etc/fstab.modem --early
+    write /sys/devices/platform/his_modem/modem_sysboot_start 1
+
+service vendor.ril-daemon /vendor/bin/hw/rild
+    class main
+    user root
+    group radio cache inet misc audio log readproc wakelock system
+    capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
+
+on property:ro.boot.radio.multisim.config=dsds
+    setprop persist.radio.multisim.config ${ro.boot.radio.multisim.config}
+
