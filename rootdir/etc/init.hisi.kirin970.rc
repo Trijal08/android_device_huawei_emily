@@ -85,7 +85,6 @@ service oeminfo_nvm /vendor/bin/oeminfo_nvm_server
     group system readproc root
     critical
     ioprio rt 4
-    seclabel u:r:oeminfo_nvm:s0
 
 service iked /vendor/bin/iked
     interface vendor.huawei.hardware.iked@1.0::IIkedDevice default
@@ -93,13 +92,11 @@ service iked /vendor/bin/iked
     user root
     disabled
     group system wakelock
-    seclabel u:r:iked:s0
 
 service teecd /vendor/bin/teecd
     class early_hal
     user root
     group root system readproc
-    seclabel u:r:tee:s0
 
 service hivwserver /vendor/bin/hivwserver
     class vowifi
