@@ -105,5 +105,8 @@ BOARD_ROOT_EXTRA_FOLDERS += \
 # SEPolicy
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
+# Vintf
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/prebuilts/manifest.xml
+
 # VNDK
 PRODUCT_USE_VNDK_OVERRIDE := true
