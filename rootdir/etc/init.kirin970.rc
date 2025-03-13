@@ -422,11 +422,6 @@ on fs
     # mount mtd partitions
     mount_all /vendor/etc/fstab.kirin970
 
-    # mount_all_patch /patch_hw/fstab.patch_step1
-    restorecon /splash2
-    chmod 775 /splash2
-    chown root system /splash2
-
     mkdir /splash2/log 0775 system log
     symlink /splash2 /log
     

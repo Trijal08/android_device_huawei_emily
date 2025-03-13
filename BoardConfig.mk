@@ -89,6 +89,15 @@ BOARD_USES_FULL_RECOVERY_IMAGE := true
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)/releasetools
 
+# Root
+BOARD_ROOT_EXTRA_FOLDERS += \
+    3rdmodem \
+    3rdmodemnvm \
+    3rdmodemnvmbkp \
+    modem_log \
+    sec_storage \
+    splash2
+
 # SEPolicy
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
