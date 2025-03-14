@@ -14,12 +14,6 @@ $(call inherit-product, device/huawei/charlotte/device.mk)
 # Inherit some common LineageOS stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-# Bootanimation
-TARGET_SCREEN_HEIGHT := 2240
-TARGET_SCREEN_WIDTH := 1080
-
-PRODUCT_SHIPPING_API_LEVEL := 27
-
 LINEAGE_BUILDTYPE := RELEASE
 
 PRODUCT_GMS_CLIENTID_BASE := android-huawei
