@@ -215,6 +215,11 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     $(LOCAL_PATH)/resources
 
+# Tee
+PRODUCT_PACKAGES += \
+    vendor.huawei.hardware.libteec@2.0 \
+    vendor.huawei.hardware.libteec@2.0.vendor
+
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-impl \

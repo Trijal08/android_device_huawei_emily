@@ -1,5 +1,8 @@
 # file contexts kirin970
 
+/vendor/bin/hw/vendor.huawei.hardware.biometrics.fingerprint@2.1-service	u:object_r:hal_fingerprint_default_exec:s0
+/vendor/bin/hw/vendor.huawei.hardware.libteec@2.0-service			u:object_r:hal_libteec_default_exec:s0
+
 /vendor/bin/aptouch_daemon							u:object_r:hal_lineage_touch_default_exec:s0
 /vendor/bin/bms_alarm								u:object_r:hal_bms_default_exec:s0
 /vendor/bin/bms_auth								u:object_r:hal_bms_default_exec:s0
