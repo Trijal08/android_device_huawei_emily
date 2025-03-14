@@ -13,6 +13,9 @@ on post-fs-data
     chmod 0660 /data/vendor/wpa/wifi/p2p_supplicant.conf
     restorecon_recursive /data/vendor/wifi
     
+    # for bluetooth mac
+    mkdir /data/vendor/bluedroid 0771 bluetooth bluetooth
+    
     mkdir /data/vendor/gps
     mkdir /data/vendor/log/gps_log
     chmod 775 /data/vendor/log/gps_log
@@ -70,9 +73,6 @@ on boot
     chmod 664 /proc/bluetooth/sleep/btwake
     chown bluetooth bluetooth /proc/bluetooth_power/data/calibrate
     chmod 664 /proc/bluetooth_power/data/calibrate
-
-    # for bluetooth mac
-    mkdir /data/vendor/bluedroid 02770 bluetooth bluetooth
     
     # enable apk to control the fwlog output
     chown system system /sys/module/bcmdhd/parameters/dhd_console_ms
@@ -144,3 +144,11 @@ service vendor.gpsd_4774  /vendor/bin/glgps4774 -c /data/vendor/gps/gpsconfig.xm
     class late_start
     user root
     group system inet sdcard_rw wakelock
+
+on property:sys.conn_macs.ready=1
+    # Bluetooth
+    chown bluetooth bluetooth /data/vendor/bluedroid/macbt
+    chmod 0666 /data/vendor/bluedroid/macbt
+    # Wi-Fi
+    chown wifi wifi /data/vendor/wifi/macwlan
+    chmod 0666 /data/vendor/wifi/macwlan
