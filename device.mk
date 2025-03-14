@@ -130,6 +130,9 @@ PRODUCT_PACKAGES += \
     libimonitor \
     libxcollie
 
+PRODUCT_PACKAGES += \
+    libstdc++.vendor \
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
