@@ -70,6 +70,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fastbootd
 
+# Fingerprint
+PRODUCT_PACKAGES += \
+    vendor.huawei.hardware.biometrics.fingerprint@2.1.vendor
+
+PRODUCT_PACKAGES += \
+    vendor.huawei.hardware.hwvibrator@1.0.vendor \
+    libiawareperf_client
+    
 # Gatekeeper
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-service \
