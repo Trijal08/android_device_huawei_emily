@@ -777,7 +777,7 @@ on early-boot
 
 on boot
     chown radio radio /proc/modemstatus
-    
+    symlink /vendor/preavs/oemcrypto /mnt/oemcrypto
     start aptouch
     start hisecd
     
@@ -836,6 +836,19 @@ on boot
     chmod 664 /sys/class/camerafs/node/flash_lightness
     chown system system /sys/class/camerafs/node/flash_lightness_f
     chmod 664 /sys/class/camerafs/node/flash_lightness_f
+    
+    # odm camera
+    chown system system /sys/class/camerafs/node/rear_frequency_node
+    chmod 0660 /sys/class/camerafs/node/rear_frequency_node
+    chown system system /sys/class/camerafs/node/fore_frequency_node
+    chmod 0660 /sys/class/camerafs/node/fore_frequency_node
+    
+    chmod 0660 /dev/hisi-fd
+    chown system system /dev/hisi-fd
+    
+    chown system system /sys/class/irda/irda_maxim/power_cfg
+    write /sys/class/irda/irda_maxim/power_cfg 1
+    chown system system /sys/class/irda/irda_chip/ir_chip_type
 
     # add for ois aging test
     chown system system /sys/class/camerafs/ois/ois_aging

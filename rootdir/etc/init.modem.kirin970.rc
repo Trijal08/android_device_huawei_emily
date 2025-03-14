@@ -25,3 +25,15 @@ service vendor.ril-daemon /vendor/bin/hw/rild
 on property:ro.boot.radio.multisim.config=dsds
     setprop persist.radio.multisim.config ${ro.boot.radio.multisim.config}
 
+on property:ro.boot.product.hardware.sku=CLT-L04
+    setprop ro.odm.config.modem_number 1
+
+on property:ro.boot.product.hardware.sku=CLT-L09
+    setprop ro.odm.config.modem_number 1
+
+on property:ro.boot.product.hardware.sku=CLT-L29
+    setprop ro.odm.config.modem_number 2
+
+on property:ro.boot.product.hardware.sku=CLT-L0J
+    setprop ro.odm.config.modem_number 1
+

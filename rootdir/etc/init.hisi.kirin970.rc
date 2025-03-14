@@ -128,6 +128,13 @@ service vendor.hwcomposer-2-2 /vendor/bin/hw/android.hardware.graphics.composer@
     capabilities SYS_NICE
     onrestart restart surfaceflinger
     task_profiles HighPerformance
+
+service CameraDaemon /vendor/bin/CameraDaemon kirin970 CHARLOTTE
+    class main
+    user media
+    group audio camera inet net_bt net_bt_admin net_bw_acct drmrpc mediadrm system
+    ioprio rt 4
+    capabilities SYS_NICE
 	
 on property:ro.vendor.config.hw_vowifi=true
     start iked
