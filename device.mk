@@ -59,6 +59,18 @@ TARGET_BOOTANIMATION_HALF_RES := true
 TARGET_SCREEN_HEIGHT := 2240
 TARGET_SCREEN_WIDTH := 1080
 
+# DRM
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.0-impl \
+    android.hardware.drm@1.0-service \
+    android.hardware.drm@1.1-service.clearkey 
+
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.2.vendor
+
+PRODUCT_PACKAGES += \
+    libmockdrmcryptoplugin
+
 # Fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
