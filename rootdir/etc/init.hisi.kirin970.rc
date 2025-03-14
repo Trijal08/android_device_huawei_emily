@@ -86,13 +86,6 @@ service oeminfo_nvm /vendor/bin/oeminfo_nvm_server
     critical
     ioprio rt 4
 
-service iked /vendor/bin/iked
-    interface vendor.huawei.hardware.iked@1.0::IIkedDevice default
-    class late_start
-    user root
-    disabled
-    group system wakelock
-
 service teecd /vendor/bin/teecd
     class early_hal
     user root
