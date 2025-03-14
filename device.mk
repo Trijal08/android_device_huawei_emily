@@ -165,6 +165,11 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
+# Vibrator
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator@1.0-impl \
+    android.hardware.vibrator@1.0-service
+
 # Inherit files
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
