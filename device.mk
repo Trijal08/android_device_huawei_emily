@@ -248,9 +248,9 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/pixel
 
 # Tee
-PRODUCT_PACKAGES += \
-    vendor.huawei.hardware.libteec@2.0 \
-    vendor.huawei.hardware.libteec@2.0.vendor
+#PRODUCT_PACKAGES += \
+#    vendor.huawei.hardware.libteec@2.0 \
+#    vendor.huawei.hardware.libteec@2.0.vendor
 
 # Thermal
 PRODUCT_PACKAGES += \
