@@ -158,7 +158,7 @@ PRODUCT_PACKAGES += \
     libxcollie
 
 PRODUCT_PACKAGES += \
-    libstdc++.vendor \
+    libstdc++.vendor
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
