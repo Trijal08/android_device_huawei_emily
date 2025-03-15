@@ -10,11 +10,6 @@ service aptouch /vendor/bin/aptouch_daemon
     user root
     group root system shell log wakelock
 
-service hiaiserver /vendor/bin/hiaiserver
-    class late_start
-    user system
-    group system root wakelock
-
 service bms_alarm /vendor/bin/bms_alarm
     user system
     group system
@@ -99,23 +94,12 @@ service teecd /vendor/bin/teecd
     user root
     group root system readproc
 
-service hivwserver /vendor/bin/hivwserver
-    class vowifi
-    user system
-    group audio inet net_bt net_bt_admin net_bw_acct system
-
 service powerct /vendor/bin/powerct
     user system
     group system
     disabled
 
 service usb_port /vendor/bin/usb_port
-    user system
-    group system
-    disabled
-    oneshot
-
-service usb_port_n /vendor/bin/usb_port -w 1
     user system
     group system
     disabled
@@ -144,9 +128,6 @@ service CameraDaemon /vendor/bin/CameraDaemon kirin970 CHARLOTTE
     ioprio rt 4
     capabilities SYS_NICE
 	
-on property:ro.vendor.config.hw_vowifi=true
-    start iked
-
 on property:odm.thp.service_enable=1
     start aptouch
 
@@ -217,9 +198,6 @@ on property:sys.shutdown.requested=*
 on property:sys.boot_completed=1
     setprop vendor.boot_completed 1
     write /proc/self/reclaim file
-
-on property:ro.vendor.config.hw_vowifi=true
-    class_start vowifi
 
 on property:sys.usb.state=*
     setprop vendor.get_usb_state ${sys.usb.state}
