@@ -284,38 +284,11 @@
         </interface>
     </hal>
     <hal format="hidl">
-        <name>vendor.huawei.hardware.hwdisplay</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IDisplay</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.huawei.hardware.hwdisplay.displayengine</name>
-        <transport>hwbinder</transport>
-        <version>1.2</version>
-        <interface>
-            <name>IDisplayEngineWrapper</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
         <name>vendor.huawei.hardware.libteec</name>
         <transport>hwbinder</transport>
         <version>3.0</version>
         <interface>
             <name>ILibteecGlobal</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.huawei.hardware.modemchr</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IModemchrDevice</name>
             <instance>default</instance>
         </interface>
     </hal>
