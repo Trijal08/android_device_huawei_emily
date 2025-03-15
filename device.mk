@@ -105,6 +105,9 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-service
 
 PRODUCT_PACKAGES += \
+    libperfgenius_vendor_client
+
+PRODUCT_PACKAGES += \
     libion
 
 # Health
