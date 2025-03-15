@@ -1,3 +1,9 @@
+# Audio
+persist.kirin.media.hires.enable=true
+persist.kirin.media.lowlatency.enable=false
+persist.kirin.media.offload.enable=true
+persist.kirin.media.usbvoice.enable=true
+
 # Bluetooth
 ro.bt.bdaddr_path=/data/vendor/bluedroid/macbt
 bluetooth.device.class_of_device=90,2,12
@@ -21,6 +27,7 @@ bluetooth.profile.sap.server.enabled?=true
 # Camera
 vendor.camera.dis.flag=2
 vendor.camera.tnr.flag=1
+ro.odm.camera.watermark=true
 
 # Dex2oat
 dalvik.vm.dex2oat64.enabled=true
@@ -30,17 +37,19 @@ debug.hwui.renderer=skiagl
 debug.renderengine.backend=threaded
 renderthread.skia.reduceopstasksplitting=true
 ro.opengles.version=196610
+vendor.debug.config.mmu_en=1
 
 # DRM
 drm.service.enabled=true
 
-# fastbootd
+# Fastbootd
 ro.fastbootd.available=true
 
 # Power HAL
 vendor.powerhal.disp.idle_support=false
 
 # Radio
+ro.config.hw_volte_on=true
 ro.telephony.default_network=9,9
 
 # Recovery
@@ -49,6 +58,9 @@ ro.recovery.ui.blank_unblank_on_init=true
 # Media
 debug.stagefright.ccodec=0
 media.stagefright.thumbnail.prefer_hw_codecs=true
+
+# Netflix
+ro.netflix.bsp_rev=KIRIN970-15244-1
 
 # SurfaceFlinger
 debug.sf.latch_unsignaled=1
