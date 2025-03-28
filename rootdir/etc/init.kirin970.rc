@@ -420,6 +420,8 @@ on early-fs
 on fs
     # mount mtd partitions
     mount_all /vendor/etc/fstab.kirin970
+    
+    symlink /dev/block/platform/ff3c0000.ufs /dev/block/bootdevice
 
     mkdir /splash2/log 0775 system log
     symlink /splash2 /log
