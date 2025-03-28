@@ -159,7 +159,8 @@ PRODUCT_PACKAGES += \
     libxcollie
 
 PRODUCT_PACKAGES += \
-    libstdc++.vendor
+    libstdc++.vendor \
+    libui-v28
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
