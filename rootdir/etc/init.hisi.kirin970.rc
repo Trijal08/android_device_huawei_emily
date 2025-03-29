@@ -6,10 +6,6 @@ on boot
     chown system system /dev/socket/oeminfo_nvm
 
 # Start services
-service aptouch /vendor/bin/aptouch_daemon
-    user root
-    group root system shell log wakelock
-
 service bms_alarm /vendor/bin/bms_alarm
     user system
     group system
@@ -139,12 +135,6 @@ on property:init.svc.zygote=running
 
 on property:init.svc.zygote=stopped
     stop vendor.folio_daemon
-
-on property:odm.thp.service_enable=1
-    start aptouch
-
-on property:odm.thp.service_enable=0
-    stop aptouch
 
 on property:vendor.bms_event=init
     start bms_heating
