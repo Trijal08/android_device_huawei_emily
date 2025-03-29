@@ -3,7 +3,7 @@ cc_library_shared {
     proprietary: true,
     defaults: ["hidl_defaults"],
     srcs: [
-        "chrlog.c",
+        "chrlog.cpp",
     ],
     shared_libs: [
         "liblog",
@@ -15,7 +15,7 @@ cc_library_shared {
     proprietary: true,
     defaults: ["hidl_defaults"],
     srcs: [
-        "hwlog.c",
+        "hwlog.cpp",
     ],
     shared_libs: [
         "liblog",
@@ -27,8 +27,8 @@ cc_library_shared {
     proprietary: true,
     defaults: ["hidl_defaults"],
     srcs: [
-        "cjson.c",
-        "imonitor.c",
+        "cjson.cpp",
+        "imonitor.cpp",
     ],
     shared_libs: [
         "liblog",
@@ -40,7 +40,7 @@ cc_library_shared {
     proprietary: true,
     defaults: ["hidl_defaults"],
     srcs: [
-        "xcollie.c",
+        "xcollie.cpp",
     ],
     shared_libs: [
         "liblog",

@@ -25,6 +25,8 @@ struct imonitor_eventobj {
     char* dynamic_path_delete[MAX_PATH_NUMBER];
 };
 
+extern "C" {
+
 struct imonitor_eventobj* imonitor_create_eventobj(unsigned int eventId) {
     struct imonitor_eventobj* event =
             (struct imonitor_eventobj*)malloc(sizeof(struct imonitor_eventobj));
@@ -153,4 +155,5 @@ int zrhung_is_id_valid(short wp_id) {
 int zrhung_send_event(int id, const char* cmd_buf, const char* msg_buf) {
     ALOGV("%s: id: %d, cmd_buf: %s, msg_buf: %s", __func__, id, cmd_buf, msg_buf);
     return 0;
+}
 }

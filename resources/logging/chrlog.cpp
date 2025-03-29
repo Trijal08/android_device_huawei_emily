@@ -20,6 +20,8 @@ typedef enum chr_LogTag {
     CHR_LOG_TAG_NFC,
 } logTag;
 
+extern "C" {
+
 int32_t __chr_exception(uint32_t errno) {
     ALOGV("%s: errno: %u", __func__, errno);
     return 0;
@@ -37,3 +39,4 @@ int __chr_printLog(logPriority prio, logTag tag, const char* fmt, ...) {
 
 int __chr_print_log(logPriority prio, logTag tag, const char* fmt, ...)
         __attribute__((alias("__chr_printLog")));
+}

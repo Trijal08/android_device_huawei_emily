@@ -4,6 +4,8 @@
 #include <stdint.h>
 #include <stdio.h>
 
+extern "C" {
+
 void __hwlog_jank_print(int p1, int id, char* comment) {
     ALOGV("%s: p1: %d, id: %d, comment: %s", __func__, p1, id, comment);
 }
@@ -25,4 +27,5 @@ int __android_log_exception_buf_write(int id, int prio, const char* tag, const c
                                       ...) {
     ALOGV("%s: id: %d, prio: %d, tag: %s", __func__, id, prio, tag);
     return 0;
+}
 }

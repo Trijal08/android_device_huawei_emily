@@ -21,6 +21,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+extern "C" {
+
 static const char* ep;
 
 struct cJSON {
@@ -313,14 +315,18 @@ static const char* parse_string(struct cJSON* item, const char* str) {
                         case 4:
                             *--ptr2 = ((uc | 0x80) & 0xBF);
                             uc >>= 6;
+                            break;
                         case 3:
                             *--ptr2 = ((uc | 0x80) & 0xBF);
                             uc >>= 6;
+                            break;
                         case 2:
                             *--ptr2 = ((uc | 0x80) & 0xBF);
                             uc >>= 6;
+                            break;
                         case 1:
                             *--ptr2 = (uc | firstByteMark[len]);
+                            break;
                     }
                     ptr2 += len;
                     break;
@@ -743,4 +749,5 @@ static char* print_value(struct cJSON* item, int depth, int fmt) {
 
 char* cJSON_Print(struct cJSON* item) {
     return print_value(item, 0, 1);
+}
 }
