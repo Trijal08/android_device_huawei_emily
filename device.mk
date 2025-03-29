@@ -249,7 +249,7 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-service
 
 # Shipping API
-PRODUCT_SHIPPING_API_LEVEL := 27
+PRODUCT_SHIPPING_API_LEVEL := 29
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
