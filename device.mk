@@ -11,6 +11,8 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 PRODUCT_CHARACTERISTICS := nosdcard
 
 # Audio
+$(call soong_config_set,android_hardware_audio,run_64bit,true)
+
 PRODUCT_PACKAGES += \
     android.hardware.audio@5.0-impl \
     android.hardware.audio.effect@5.0-impl \
