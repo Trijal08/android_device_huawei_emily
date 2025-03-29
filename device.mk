@@ -160,6 +160,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     libstdc++.vendor \
+    libjsoncpp-v29 \
     libui-v28
 
 # Overlays
