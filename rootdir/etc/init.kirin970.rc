@@ -394,6 +394,9 @@ on fs
     restorecon /sys/class/graphics/fb0/lcd_cabc_mode
     restorecon /sys/class/leds/torch/flash_thermal_protect
     restorecon /sys/class/timed_output/vibrator/vibrator_calib
+    
+    # Start TEECD
+    start teecd
 
 on late-fs
     chmod 0440 /sys/devices/virtual/hw_power/vbus/connect_state
@@ -605,14 +608,6 @@ on post-fs-data
     chown root system /data/vendor/log/camera-log
     restorecon_recursive /data/vendor/log/camera-log
     
-    # tee
-    mkdir /data/vendor/log/sec_storage_data 0775 system system
-    mkdir /data/vendor/log/sec_storage_data/log 0755 system system
-    mkdir /data/vendor/sec_storage_data 0700 system system
-    restorecon /data/vendor/sec_storage_data
-    mkdir /data/vendor/sec_storage_data_users 0700 system system
-    restorecon /data/vendor/sec_storage_data_users
-    
     setprop vold.post_fs_data_done 1
 
 on early-boot
@@ -729,6 +724,20 @@ on early-boot
     chmod 0660 /sys/fs/pstore/dmesg-ramoops-0
     chown root log /sys/fs/pstore/pmsg-ramoops-0
     chmod 0660 /sys/fs/pstore/pmsg-ramoops-0
+    
+    # TEE
+    mkdir /data/vendor/log/sec_storage_data 0775 system system
+    mkdir /data/vendor/log/sec_storage_data/log 0755 system system 
+
+    # set sec_storage_data can be access by teecd
+    mkdir /data/vendor/sec_storage_data 0700 system system
+    restorecon_recursive /data/vendor/sec_storage_data 
+    mkdir /data/vendor/sec_storage_data_users 0700 system system
+    restorecon_recursive /data/vendor/sec_storage_data_users 
+    mkdir /data/sec_storage_data 0700 system system encryption=None
+    restorecon_recursive /data/sec_storage_data
+    mkdir /data/sec_storage_data_users 0700 system system encryption=None
+    restorecon_recursive /data/sec_storage_data_users
 
 on boot
     chown radio radio /proc/modemstatus
