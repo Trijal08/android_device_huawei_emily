@@ -324,23 +324,6 @@ on init
     chown system system /sys/kernel/promm/enable
     chown system system /sys/kernel/promm/priority
     
-    # sets up initial workingset cgroup
-    mkdir /dev/workingset
-    mount cgroup none /dev/workingset nodev noexec nosuid workingset
-    mkdir /dev/workingset/monitor0
-    mkdir /dev/workingset/monitor1
-
-    chmod 0600 /dev/workingset/tasks
-    chmod 0600 /dev/workingset/monitor0/tasks
-    chmod 0600 /dev/workingset/monitor1/tasks
-    chmod 0600 /dev/workingset/cgroup.procs
-    chmod 0600 /dev/workingset/monitor0/cgroup.procs
-    chmod 0600 /dev/workingset/monitor1/cgroup.procs
-    chmod 0600 /dev/workingset/monitor0/workingset.state
-    chmod 0600 /dev/workingset/monitor1/workingset.state
-    chmod 0600 /dev/workingset/monitor0/workingset.data
-    chmod 0600 /dev/workingset/monitor1/workingset.data
-
     # sets up initial protectLru memcg
     mkdir /dev/memcg/protect_lru_1
     mkdir /dev/memcg/protect_lru_2
@@ -375,17 +358,9 @@ on init
     start bms_auth
     start bms_protocol
     
-    mkdir /dev/frz
-    mount cgroup none /dev/frz freezer
-    chmod 0775 /dev/frz
-
     # log
     chmod 0660 /dev/hwlog_switch
     chown logd system /dev/hwlog_switch
-
-    mkdir /dev/frz/aware_frozen
-    chmod 0770 /dev/frz/aware_frozen
-    chown root root /dev/frz/aware_frozen
 
 on early-fs
     wait /dev/block/by-name/oeminfo
