@@ -459,8 +459,6 @@ on late-fs
     chmod 0220 /sys/devices/platform/huawei_batt_info/powerct_error_code
     chown system system /sys/devices/platform/huawei_batt_info/powerct_error_code
 
-    start powerct
-
 on post-fs
     # set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
@@ -742,7 +740,6 @@ on early-boot
 on boot
     chown radio radio /proc/modemstatus
     symlink /vendor/preavs/oemcrypto /mnt/oemcrypto
-    start aptouch
     start hisecd
     
     # vowifi
@@ -1956,7 +1953,6 @@ on charger
     chown system system /sys/class/hw_power/power_log/head_all
     chmod 0444 /sys/class/hw_power/power_log/content_all
     chown system system /sys/class/hw_power/power_log/content_all
-    start bms_logcat
     
     chmod 0660 /sys/class/hw_power/soc_control/control
     chown system system /sys/class/hw_power/soc_control/control
@@ -1970,13 +1966,11 @@ on charger
     chown system system /sys/class/hw_power/interface/iin_limit
     chmod 0660 /sys/class/hw_power/interface/iin_thermal_all
     chown system system /sys/class/hw_power/interface/iin_thermal_all
-    start bms_thermal
     
     chmod 0444 /sys/devices/virtual/android_usb/android0/switch_index
     chown system system /sys/devices/virtual/android_usb/android0/switch_index
     start usb_port
 
-    start bms_alarm
     start bms_behavior
     class_start charger
 
