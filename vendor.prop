@@ -54,6 +54,10 @@ vendor.powerhal.disp.idle_support=false
 ro.config.hw_volte_on=true
 ro.telephony.default_network=9,9
 persist.radio.dualltecap=1
+ro.odm.gsm.fastdormancy.mode=1
+ro.odm.gsm.fd.screen=3
+ro.odm.gsm.fd.time_scroff=4000
+ro.odm.rp_ack_tpdu_plmn=20820,20801
 
 # Recovery
 ro.recovery.ui.blank_unblank_on_init=true
