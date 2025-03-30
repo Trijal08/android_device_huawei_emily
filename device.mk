@@ -161,6 +161,9 @@ PRODUCT_PACKAGES += \
 
 # Misc
 PRODUCT_PACKAGES += \
+    vendor.huawei.hardware.biometrics.hwsecurefacerecognize@2.0
+
+PRODUCT_PACKAGES += \
     vendor.huawei.hardware.perfgenius@2.0.vendor
 
 PRODUCT_PACKAGES += \
