@@ -66,11 +66,11 @@ service usb_port /vendor/bin/usb_port
     disabled
     oneshot
 
-service charger /system/bin/bms_animation
+service vendor.charger /vendor/bin/hw_charger -p
     class charger
     user root
     group root system
-    critical
+    capabilities SYS_BOOT
     seclabel u:r:charger:s0
 
 service vendor.hwcomposer-2-2 /vendor/bin/hw/android.hardware.graphics.composer@2.2-service
