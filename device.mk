@@ -83,10 +83,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/fingerprint.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/fingerprint.kl
 
-PRODUCT_PACKAGES += \
-    vendor.huawei.hardware.hwvibrator@1.0.vendor \
-    libiawareperf_client
-
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/native_packages.bin:$(TARGET_COPY_OUT_VENDOR)/etc/native_packages.bin
 
@@ -115,9 +111,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service
-
-PRODUCT_PACKAGES += \
-    libperfgenius_vendor_client
 
 PRODUCT_PACKAGES += \
     libion
@@ -161,10 +154,19 @@ PRODUCT_PACKAGES += \
 
 # Misc
 PRODUCT_PACKAGES += \
-    vendor.huawei.hardware.biometrics.hwsecurefacerecognize@2.0
+    vendor.huawei.hardware.biometrics.hwsecurefacerecognize@2.0.vendor \
+    vendor.huawei.hardware.biometrics.hwfacerecognize@2.0.vendor
 
 PRODUCT_PACKAGES += \
-    vendor.huawei.hardware.perfgenius@2.0.vendor
+    vendor.huawei.hardware.hwfactoryinterface@1.1.vendor \
+    vendor.huawei.hardware.camera.cfgsvr@1.1.vendor \
+    vendor.huawei.hardware.hwvibrator@1.0.vendor \
+    vendor.huawei.hardware.sensors@1.0.vendor
+
+PRODUCT_PACKAGES += \
+    vendor.huawei.hardware.perfgenius@2.0.vendor \
+    libperfgenius_vendor_client \
+    libiawareperf_client
 
 PRODUCT_PACKAGES += \
     libchrlog \
