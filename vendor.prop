@@ -4,6 +4,9 @@ persist.kirin.media.lowlatency.enable=false
 persist.kirin.media.offload.enable=true
 persist.kirin.media.usbvoice.enable=true
 
+# Adoptable Storage
+ro.crypto.volume.options=aes-256-xts
+
 # Bluetooth
 bluetooth.device.default_name=Huawei P20 Pro
 ro.bt.bdaddr_path=/data/vendor/bluedroid/macbt
