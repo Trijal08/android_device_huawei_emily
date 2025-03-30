@@ -6,12 +6,6 @@ on boot
     chown system system /dev/socket/oeminfo_nvm
 
 # Start services
-service bms_alarm /vendor/bin/bms_alarm
-    user system
-    group system
-    disabled
-    oneshot
-
 service bms_auth /vendor/bin/bms_auth
     user system
     group system
@@ -29,12 +23,6 @@ service bms_event /vendor/bin/bms_event
     group system
     disabled
 
-service bms_logcat /vendor/bin/bms_logcat
-    user system
-    group system
-    disabled
-    oneshot
-
 service bms_protocol /vendor/bin/bms_protocol
     user system
     group system
@@ -42,24 +30,6 @@ service bms_protocol /vendor/bin/bms_protocol
     oneshot
 
 service bms_soc /vendor/bin/bms_soc
-    user system
-    group system
-    disabled
-    oneshot
-
-service bms_thermal /vendor/bin/bms_thermal
-    user system
-    group system
-    disabled
-    oneshot
-
-service bms_thermal_h /vendor/bin/bms_thermal -m 0
-    user system
-    group system
-    disabled
-    oneshot
-
-service bms_thermal_n /vendor/bin/bms_thermal -m 1
     user system
     group system
     disabled
@@ -89,11 +59,6 @@ service teecd /vendor/bin/teecd
     class early_hal
     user root
     group root system readproc
-
-service powerct /vendor/bin/powerct
-    user system
-    group system
-    disabled
 
 service usb_port /vendor/bin/usb_port
     user system
@@ -149,7 +114,6 @@ on property:vendor.bms_event=stop
     stop usb_port
     stop bms_heating
     stop bms_soc
-    stop chargelogcat-c
 
 on property:vendor.bms_event_vote=start
     start bms_auth
@@ -159,35 +123,6 @@ on property:vendor.bms_event_vote=start
 on property:vendor.bms_event_vote=stop
     stop bms_auth
     stop bms_protocol
-
-on property:sys.factory_pwr_ctrl=true
-    setprop vendor.soc_ctrl_mmi_stop true
-
-on property:sys.factory_pwr_ctrl=false
-    setprop vendor.soc_ctrl_mmi_stop false
-
-# for customized version
-on property:ro.config.hw_power_ctrl=*
-    setprop vendor.soc_ctrl_cust ${ro.config.hw_power_ctrl}
-
-on property:vendor.hw_mc.bms.hw_power_ctrl=*
-    setprop vendor.soc_ctrl_cust ${vendor.hw_mc.bms.hw_power_ctrl}
-
-# for demo version
-on property:sys.demo_pwr_ctrl=*
-    setprop vendor.soc_ctrl_demo ${sys.demo_pwr_ctrl}
-
-on property:ro.config.bootincharge=*
-    setprop vendor.soc_ctrl_bootincharge ${ro.config.bootincharge}
-
-on property:vendor.hw_mc.bms.bootincharge=*
-    setprop vendor.soc_ctrl_bootincharge ${vendor.hw_mc.bms.bootincharge}
-
-on property:sys.bms_limit_mode=hota
-    start bms_thermal_h
-
-on property:sys.bms_limit_mode=normal
-    start bms_thermal_n
 
 on property:sys.boot_completed=1 && property:ro.runmode=normal
     write /sys/class/hw_power/interface/iin_limit "bms_limit all 0"
