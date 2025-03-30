@@ -171,7 +171,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libchrlog \
     libhwlog \
-    libimonitor \
     libxcollie
 
 PRODUCT_PACKAGES += \
