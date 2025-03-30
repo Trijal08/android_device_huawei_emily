@@ -82,6 +82,13 @@ service vendor.hwcomposer-2-2 /vendor/bin/hw/android.hardware.graphics.composer@
     onrestart restart surfaceflinger
     task_profiles HighPerformance
 
+service vendor.keymaster-3-0 /vendor/bin/hw/android.hardware.keymaster@3.0-service
+    override
+    interface android.hardware.keymaster@3.0::IKeymasterDevice default
+    class early_hal
+    user system
+    group system drmrpc
+
 service CameraDaemon /vendor/bin/CameraDaemon kirin970 CHARLOTTE
     class main
     user media
