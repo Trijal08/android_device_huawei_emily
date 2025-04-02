@@ -132,7 +132,14 @@ PRODUCT_PACKAGES += \
 # Hisi init
 PRODUCT_PACKAGES += \
     hisi_init
-    
+
+# IR
+PRODUCT_PACKAGES += \
+    android.hardware.ir-service.huawei
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml
+
 # Keymaster
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-service
@@ -149,7 +156,7 @@ PRODUCT_PACKAGES += \
 # Livedisplay
 PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@2.1-service.hisi
-    
+
 # Media
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
@@ -298,7 +305,8 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     $(LOCAL_PATH)/resources \
     hardware/google/interfaces \
-    hardware/google/pixel
+    hardware/google/pixel \
+    device/huawei/opensource
 
 # Speed profile services and wifi-service to reduce RAM and storage
 PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
