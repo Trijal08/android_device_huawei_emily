@@ -54,3 +54,4 @@
 
 # Block devices
 /dev/block/platform/ff3c0000.ufs/by-name/super   				u:object_r:super_block_device:s0
+/dev/block/platform/ff3b0000.ufs/by-name/patch       				u:object_r:metadata_block_device:s0
