@@ -74,6 +74,7 @@ ro.odm.gsm.fd.time_scroff=4000
 ro.odm.rp_ack_tpdu_plmn=20820,20801
 
 # Recovery
+persist.vendor.recovery_update=true
 ro.recovery.ui.blank_unblank_on_init=true
 
 # Media
