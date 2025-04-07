@@ -155,7 +155,7 @@ PRODUCT_PACKAGES += \
 
 # Livedisplay
 PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.1-service.hisi
+    vendor.lineage.livedisplay@2.1-service.huawei
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -195,7 +195,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libstdc++.vendor \
     libjsoncpp-v29 \
-    libui-v28
+    libui-v29
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
@@ -306,14 +306,14 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)/resources \
     hardware/google/interfaces \
     hardware/google/pixel \
-    device/huawei/opensource
+    device/huawei/compat
 
 # Speed profile services and wifi-service to reduce RAM and storage
 PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
 
 # Touch
 PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.hisi
+    vendor.lineage.touch@1.0-service.huawei
 
 # Trust HAL
 PRODUCT_PACKAGES += \

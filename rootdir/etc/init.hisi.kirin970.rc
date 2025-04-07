@@ -96,18 +96,6 @@ service CameraDaemon /vendor/bin/CameraDaemon kirin970 CHARLOTTE
     ioprio rt 4
     capabilities SYS_NICE
 	
-service vendor.folio_daemon /system/bin/folio_daemon
-    class late_start
-    user system
-    group system uhid
-    disabled
-
-on property:init.svc.zygote=running
-    start vendor.folio_daemon
-
-on property:init.svc.zygote=stopped
-    stop vendor.folio_daemon
-
 on property:vendor.bms_event=init
     start bms_heating
     start bms_behavior
