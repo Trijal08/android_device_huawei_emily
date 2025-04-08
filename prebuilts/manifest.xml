@@ -247,15 +247,6 @@
         </interface>
     </hal>
     <hal format="hidl">
-        <name>vendor.huawei.hardware.hisupl</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ISuplclienttoserverInterface</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
         <name>vendor.huawei.hardware.libteec</name>
         <transport>hwbinder</transport>
         <version>3.0</version>
@@ -302,15 +293,6 @@
             <name>IRadioIms</name>
             <instance>rildi</instance>
             <instance>rildi2</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.huawei.hardware.tp</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ITouchscreen</name>
-            <instance>default</instance>
         </interface>
     </hal>
 </manifest>
