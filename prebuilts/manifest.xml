@@ -127,6 +127,15 @@
         </interface>
     </hal>
     <hal format="hidl">
+        <name>android.hardware.nfc</name>
+        <transport>hwbinder</transport>
+        <version>1.2</version>
+        <interface>
+            <name>INfc</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
         <name>android.hardware.radio</name>
         <transport>hwbinder</transport>
         <version>1.4</version>
@@ -143,6 +152,16 @@
         <interface>
             <name>IRadioConfig</name>
             <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.secure_element</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>ISecureElement</name>
+            <instance>SIM1</instance>
+            <instance>eSE1</instance>
         </interface>
     </hal>
     <hal format="hidl">
@@ -256,6 +275,15 @@
         </interface>
     </hal>
     <hal format="hidl">
+        <name>vendor.huawei.hardware.nfc</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IHWNfc</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
         <name>vendor.huawei.hardware.radio</name>
         <transport>hwbinder</transport>
         <version>2.0</version>
@@ -293,6 +321,24 @@
             <name>IRadioIms</name>
             <instance>rildi</instance>
             <instance>rildi2</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.nxp.nxpnfc</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>INxpNfc</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.nxp.nxpese</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>INxpEse</name>
+            <instance>default</instance>
         </interface>
     </hal>
 </manifest>
