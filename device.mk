@@ -171,6 +171,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libmockcasplugin
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilts/mediacodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy
+
 # Misc
 PRODUCT_PACKAGES += \
     vendor.huawei.hardware.biometrics.hwsecurefacerecognize@2.0.vendor \
