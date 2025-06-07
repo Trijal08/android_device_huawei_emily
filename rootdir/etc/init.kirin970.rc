@@ -1390,7 +1390,7 @@ on boot
     
     mkdir /data/vendor/log/fingerprint
     chown system system /data/vendor/log/fingerprint
-    restorecon_recursive /hw_product/bin/fingerprint
+
     mkdir /data/vendor/fingerprint_dump 0770 system system
     chown system system /data/vendor/fingerprint_dump
     restorecon_recursive /data/vendor/fingerprint_dump
@@ -1409,6 +1409,7 @@ on boot
     chown  system  system  /sys/devices/platform/fingerprint/read_image_flag
     chmod  0660  /sys/devices/platform/fingerprint/nav
     chown  system  system  /sys/devices/platform/fingerprint/nav
+    write /sys/devices/platform/fingerprint/nav 1
     chmod  0660  /sys/devices/platform/fingerprint/module_id
     chown  system  system  /sys/devices/platform/fingerprint/module_id
     chmod  0660  /sys/devices/platform/fingerprint/result
