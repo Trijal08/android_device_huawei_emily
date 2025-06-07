@@ -1,6 +1,9 @@
 on boot
     # Power
     setprop vendor.powerhal.init 1
+    # Oeminfo
+    chmod 0666 /dev/socket/oeminfo_nvm
+    chown system system /dev/socket/oeminfo_nvm
 
 # Start services
 service aptouch /vendor/bin/aptouch_daemon
