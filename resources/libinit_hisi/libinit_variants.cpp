@@ -127,9 +127,9 @@ std::map<int, std::map<int, std::string>> elements = {
 
 ProductInfo ReadProductInfo() {
     std::vector<char> HW_Version(8);
-    std::vector<char> HW_Region(6);
+    std::vector<char> HW_Region(16);
     std::vector<char> SW_Version(128);
-    std::vector<char> MarketingName(19);
+    std::vector<char> MarketingName(32);
     std::vector<char> Model(128);
     ProductInfo product_info = {};
 
