@@ -208,6 +208,11 @@ PRODUCT_PACKAGES += \
     SecureElement \
     NfcNci \
     Tag
+    
+# NFC (for STMicro)
+PRODUCT_PACKAGES += \
+    android.hardware.nfc@1.2-service.st \
+    nfc_nci.st21nfc.default
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nxp.mifare.xml \
