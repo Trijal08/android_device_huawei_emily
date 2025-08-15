@@ -29,6 +29,9 @@ on init
     chmod 0400 /dev/hisi_teelog
     chown system system /sys/kernel/tui/c_state
     
+    chown root system /sec_storage
+    chmod 660 /sec_storage
+    
     # add for audio
     chmod 0660 /dev/deviceboxID
     chown media media /dev/deviceboxID
