@@ -81,6 +81,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libavservices_minijail_vendor
 
+# DRM clearkey
+PRODUCT_PACKAGES += \
+    android.hardware.drm-service.clearkey
+
 # Fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
