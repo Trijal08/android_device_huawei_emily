@@ -976,7 +976,6 @@ on boot
     chown system system sys/class/sensors/cap_prox_sensor/cap_prox_data_mode
     chown system system sys/class/ap_sensor/color_sensor/calibrate_timeout
     chown system system sys/class/ap_sensor/color_sensor/calibrate
-    chown media system sys/class/sensors/rpc_sensor/rpc_motion_req
     chown system system sys/class/sensors/rpc_sensor/rpc_sar_service_req
     chown system system /sys/devices/platform/huawei_sensorhub_logbuff/logbuff_config
     chmod 660 /sys/devices/platform/huawei_sensorhub_logbuff/logbuff_config
@@ -985,6 +984,10 @@ on boot
     chown system system /sys/class/sensors/libsensor_ver
     chown root system /proc/sensorhub_logbuff
     chown system system sys/class/sensors/step_counter/step_counter_info
+    
+    # Sensors for audio
+    chown system audio /sys/class/sensors/rpc_sensor/rpc_motion_req
+    chmod 0660 /sys/class/sensors/rpc_sensor/rpc_motion_req    
 
     # NFC
     chown nfc nfc /sys/nfc/nfc_fwupdate
