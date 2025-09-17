@@ -138,11 +138,7 @@ BOARD_ROOT_EXTRA_FOLDERS += \
     3rdmodemnvmbkp \
     modem_log \
     sec_storage \
-    res \
     splash2
-
-BOARD_ROOT_EXTRA_SYMLINKS := \
-    /vendor/preavs:/preavs
     
 # Security patch level
 VENDOR_SECURITY_PATCH := 2022-06-01
