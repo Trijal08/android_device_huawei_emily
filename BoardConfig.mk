@@ -168,6 +168,9 @@ CONFIG_DRIVER_NL80211		:= y
 WIFI_DRIVER_FW_PATH_AP := "/vendor/firmware/fw_bcm4359_apsta_hw.bin"
 WIFI_DRIVER_FW_PATH_PARAM := "/sys/module/bcmdhd/parameters/firmware_path"
 WIFI_DRIVER_FW_PATH_STA := "/vendor/firmware/fw_bcm4359_hw.bin"
+WIFI_DRIVER_FW_PATH_P2P := "/vendor/firmware/fw_bcm4359_hw.bin"
+WIFI_DRIVER_NVRAM_PATH_PARAM := "/sys/module/bcmdhd/parameters/nvram_path"
+WIFI_DRIVER_NVRAM_PATH := "/vendor/firmware/nvram4359_hw_charlotte_v1.txt"
 
 WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
