@@ -368,14 +368,10 @@ PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl \
     android.hardware.vibrator@1.0-service
 
-# WiFi
-PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service \
-    hostapd \
-    libwpa_client \
-    wificond \
-    wpa_supplicant \
-    wpa_supplicant.conf 
+# Wifi
+PRODUCT_PACKAGES += android.hardware.wifi-service libwpa_client wpa_supplicant hostapd wificond wpa_cli wpa_supplicant.conf
+PRODUCT_PROPERTY_OVERRIDES += wifi.interface=wlan0 \
+                              wifi.supplicant_scan_interval=15
 
 PRODUCT_PACKAGES += \
     WifiOverlay \
