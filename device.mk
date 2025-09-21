@@ -201,7 +201,7 @@ PRODUCT_PACKAGES += \
     libxcollie
 
 PRODUCT_PACKAGES += \
-    libstdc++.vendor \
+    libstdc++_vendor \
     libjsoncpp-v29 \
     libui-v29
 
