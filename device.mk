@@ -96,8 +96,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/fingerprint.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/fingerprint.kl
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilts/native_packages.bin:$(TARGET_COPY_OUT_VENDOR)/etc/native_packages.bin
+# Tee native packages
+PRODUCT_PACKAGES += \
+    native_packages.xml
 
 # Folio
 PRODUCT_PACKAGES += \
