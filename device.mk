@@ -131,7 +131,8 @@ PRODUCT_PACKAGES += \
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health-service.example \
-    android.hardware.health-service.example_recovery
+    android.hardware.health-service.example_recovery \
+    android.hardware.health@2.1.vendor
 
 # Hisi init
 PRODUCT_PACKAGES += \
