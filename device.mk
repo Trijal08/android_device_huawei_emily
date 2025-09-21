@@ -354,10 +354,6 @@ PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
 # Touch
 PRODUCT_PACKAGES += \
     vendor.lineage.touch@1.0-service.huawei
-
-# Trust HAL
-PRODUCT_PACKAGES += \
-    vendor.lineage.trust@1.0-service
     
 # USB
 PRODUCT_PACKAGES += \
