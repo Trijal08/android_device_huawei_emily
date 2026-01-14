@@ -1,0 +1,8 @@
+ro.mist.display=1080 x 2240, 60 Hz
+ro.mist.battery=3400 mAh
+ro.mist.soc=HiSilicon® Kirin 970
+ro.mist.camera=20MP + 12MP
+ro.mist.front=24MP
+ro.mist.platform=Hi3670
+ro.mist.screen=5.8" IPS LCD
+ro.mist.device.name=Huawei P20

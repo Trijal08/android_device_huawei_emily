@@ -122,6 +122,8 @@ TARGET_BOARD_PLATFORM := kirin970
 
 # Properties
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
+# Custom MistOS about phone properties
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/custom_system.prop
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.kirin970
