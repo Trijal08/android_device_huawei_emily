@@ -1,0 +1,32 @@
+[
+  {
+    "repository": "device_huawei_compat",
+    "target_path": "device/huawei/compat",
+    "branch": "lineage-23.0"
+  },
+  {
+    "repository": "Trijal08/proprietary_vendor_huawei_charlotte",
+    "target_path": "vendor/huawei/charlotte",
+    "remote": "github-non-los",
+    "branch": "android@14"
+  },
+  {
+    "repository": "Trijal08/android_kernel_huawei_kirin970",
+    "target_path": "kernel/huawei/kirin970",
+    "remote": "github-non-los",
+    "branch": "anaconda-kirin970"
+  },
+
+  {
+    "repository": "platform/prebuilts/vndk/v29",
+    "target_path": "prebuilts/vndk/v29",
+    "remote": "aosp",
+    "branch": "android15-qpr1-release"
+  },
+  {
+    "repository": "LineageOS/android_hardware_lineage_interfaces",
+    "target_path": "hardware/lineage/interfaces",
+    "remote": "github-non-los",
+    "branch": "lineage-22.2"
+  }
+]
