@@ -159,7 +159,7 @@ DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/prebuilts/manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/prebuilts/compatibility_matrix.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     $(DEVICE_PATH)/prebuilts/framework_compatibility_matrix.xml \
-    vendor/lineage/config/device_framework_matrix.xml
+    $(DEVICE_PATH)/device_framework_matrix.xml
 
 # Vulkan
 TARGET_USES_VULKAN := true
