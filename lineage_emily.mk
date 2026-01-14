@@ -13,16 +13,25 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 # Inherit from emily device
 $(call inherit-product, device/huawei/emily/device.mk)
 
-# Inherit some common LineageOS stuff.
+# Inherit some common stuff
+ROM_VENDOR := lineage
+ifdef ROM_VENDOR
+$(call inherit-product, vendor/$(ROM_VENDOR)/config/common_full_phone.mk)
+else
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+endif
 
 LINEAGE_BUILDTYPE := RELEASE
 
 PRODUCT_GMS_CLIENTID_BASE := android-huawei
 
 # Device identifier.
-PRODUCT_NAME := lineage_emily
 PRODUCT_DEVICE := emily
+ifdef ROM_VENDOR
+PRODUCT_NAME := $(ROM_VENDOR)_$(PRODUCT_DEVICE)
+else
+PRODUCT_NAME := lineage_$(PRODUCT_DEVICE)
+endif
 PRODUCT_BRAND := HUAWEI
 PRODUCT_MODEL := P20
 PRODUCT_MANUFACTURER := HUAWEI
