@@ -380,4 +380,5 @@ PRODUCT_COPY_FILES += \
 # Inherit files
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
+# $(call inherit-product, vendor/huawei/emily/emily-vendor.mk)
 $(call inherit-product, vendor/huawei/charlotte/charlotte-vendor.mk)

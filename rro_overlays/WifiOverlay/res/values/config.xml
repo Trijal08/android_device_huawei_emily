@@ -26,7 +26,7 @@
     <bool translatable="false" name="config_wifiSaeUpgradeEnabled">false</bool>
     
     <!-- Default access point SSID used for tethering -->
-    <string name="wifi_tether_configure_ssid_default" translatable="false">Huawei-P20-Pro</string>
+    <string name="wifi_tether_configure_ssid_default" translatable="false">Huawei-P20</string>
     
     <!-- Do not translate. Default access point SSID used for local only hotspot -->
     <string name="wifi_localhotspot_configure_ssid_default" translatable="false">Huawei</string>

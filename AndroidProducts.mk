@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-COMMON_LUNCH_CHOICES := lineage_charlotte-userdebug
+COMMON_LUNCH_CHOICES := lineage_emily-userdebug
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_charlotte.mk
+    $(LOCAL_DIR)/lineage_emily.mk

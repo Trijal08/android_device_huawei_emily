@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/huawei/charlotte
+DEVICE_PATH := device/huawei/emily
 COMPAT_PATH := device/huawei/compat
 
 # APEX
@@ -177,6 +177,7 @@ WIFI_DRIVER_FW_PATH_PARAM := "/sys/module/bcmdhd/parameters/firmware_path"
 WIFI_DRIVER_FW_PATH_STA := "/vendor/firmware/fw_bcm4359_hw.bin"
 WIFI_DRIVER_FW_PATH_P2P := "/vendor/firmware/fw_bcm4359_hw.bin"
 WIFI_DRIVER_NVRAM_PATH_PARAM := "/sys/module/bcmdhd/parameters/nvram_path"
+# WIFI_DRIVER_NVRAM_PATH := "/vendor/firmware/nvram4359_hw_emily_v1.txt"
 WIFI_DRIVER_NVRAM_PATH := "/vendor/firmware/nvram4359_hw_charlotte_v1.txt"
 
 WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true

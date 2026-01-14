@@ -10,8 +10,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/non_ab_device.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
-# Inherit from charlotte device
-$(call inherit-product, device/huawei/charlotte/device.mk)
+# Inherit from emily device
+$(call inherit-product, device/huawei/emily/device.mk)
 
 # Inherit some common LineageOS stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
@@ -21,10 +21,10 @@ LINEAGE_BUILDTYPE := RELEASE
 PRODUCT_GMS_CLIENTID_BASE := android-huawei
 
 # Device identifier.
-PRODUCT_NAME := lineage_charlotte
-PRODUCT_DEVICE := charlotte
+PRODUCT_NAME := lineage_emily
+PRODUCT_DEVICE := emily
 PRODUCT_BRAND := HUAWEI
-PRODUCT_MODEL := P20-Pro
+PRODUCT_MODEL := P20
 PRODUCT_MANUFACTURER := HUAWEI
 
 # Build props

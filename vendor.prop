@@ -8,7 +8,7 @@ persist.kirin.media.usbvoice.enable=true
 ro.crypto.volume.options=aes-256-xts
 
 # Bluetooth
-bluetooth.device.default_name=Huawei P20 Pro
+bluetooth.device.default_name=Huawei P20
 ro.bt.bdaddr_path=/data/vendor/bluedroid/macbt
 bluetooth.device.class_of_device=90,2,12
 bluetooth.core.gap.le.privacy.enabled=false
