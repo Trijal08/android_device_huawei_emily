@@ -7,6 +7,9 @@
 DEVICE_PATH := device/huawei/emily
 COMPAT_PATH := device/huawei/compat
 
+# [TEMP] for Android 16
+ALLOW_MISSING_DEPENDENCIES := true
+
 # APEX
 OVERRIDE_TARGET_FLATTEN_APEX := true
 
@@ -40,7 +43,8 @@ BUILD_BROKEN_DUP_RULES := true
 TARGET_SCREEN_DENSITY := 480
 
 # Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH)/resources:init_hisi
+# TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH)/resources:init_hisi
+$(call soong_config_set,libinit,vendor_init_lib, //$(DEVICE_PATH)/resources:init_hisi)
 TARGET_RECOVERY_DEVICE_MODULES := init_hisi
 
 # Kernel build
