@@ -211,7 +211,7 @@ PRODUCT_PACKAGES += \
     android.hardware.nfc@1.2.vendor \
     com.android.nfc_extras \
     SecureElement \
-    NfcNci \
+    $(RELEASE_PACKAGE_NFC_STACK) \
     Tag
     
 # NFC (for STMicro)
