@@ -5,6 +5,9 @@
 #
 #
 
+# Include some extras if they exist
+-include device/huawei/emily/extras.mk
+
 # AAPT conf
 PRODUCT_AAPT_CONFIG := normal 
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
