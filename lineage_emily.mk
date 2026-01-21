@@ -29,6 +29,6 @@ PRODUCT_MANUFACTURER := HUAWEI
 
 # Build props
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildDesc="CLT-L29-user 102.0.0 HUAWEICLT-L29 226-OVS-LGRP2 release-keys" \
-    BuildFingerprint=HUAWEI/CLT-L29/HWCLT:10/HUAWEICLT-L29/10.0.0.171C432:user/release-keys \
+    BuildDesc="EML-AL00-user 103.0.0 HUAWEIEML-AL00 165-CHN-LGRP1 release-keys" \
+    BuildFingerprint=HUAWEI/EML-AL00/HWEML:10/HUAWEIEML-AL00/10.0.0.176C00:user/release-keys \
     DeviceProduct=$(PRODUCT_DEVICE)
