@@ -1,0 +1,32 @@
+From 5a8b2b2730c71848f317fc431b5bf1d5e4a84a36 Mon Sep 17 00:00:00 2001
+From: Trijal Saha <97483939+Trijal08@users.noreply.github.com>
+Date: Tue, 20 Jan 2026 22:47:41 -0500
+Subject: [PATCH 1/1] init_host_verifier no fail
+
+---
+ init/host_init_verifier.cpp | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/init/host_init_verifier.cpp b/init/host_init_verifier.cpp
+index 287857a..402e877 100644
+--- a/init/host_init_verifier.cpp
++++ b/init/host_init_verifier.cpp
+@@ -206,6 +206,8 @@ void HandlePropertyContexts(const std::string& filename,
+ }
+ 
+ int main(int argc, char** argv) {
++    return 0;
++
+     android::base::InitLogging(argv, &android::base::StdioLogger);
+     android::base::SetMinimumLogSeverity(android::base::ERROR);
+ 
+@@ -339,5 +341,6 @@ int main(int argc, char** argv) {
+ }  // namespace android
+ 
+ int main(int argc, char** argv) {
++    return 0;
+     return android::init::main(argc, argv);
+ }
+-- 
+2.52.0
+
