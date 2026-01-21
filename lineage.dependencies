@@ -8,7 +8,7 @@
     "repository": "Trijal08/proprietary_vendor_huawei_charlotte",
     "target_path": "vendor/huawei/charlotte",
     "remote": "github-non-los",
-    "branch": "android@14"
+    "branch": "lineage-23.0"
   },
   {
     "repository": "Trijal08/android_kernel_huawei_kirin970",
@@ -28,5 +28,11 @@
     "target_path": "hardware/lineage/interfaces",
     "remote": "github-non-los",
     "branch": "lineage-22.2"
+  },
+  {
+    "repository": "Trijal08/device_lineage_sepolicy",
+    "target_path": "device/lineage/sepolicy",
+    "remote": "github-non-los",
+    "branch": "16"
   }
 ]
