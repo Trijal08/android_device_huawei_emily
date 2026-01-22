@@ -1,8 +1,8 @@
-# Symlink ld.bfd to ld.lld
-if ln -sf ../../../../../gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/aarch64-linux-android-ld.bfd $(realpath .)/prebuilts/clang/kernel/linux-x86/clang-r416183b/bin/ld.lld; then
-    echo "Successfully symlinked ld.bfd to ld.lld"
+# Use BoardConfigKernel.mk from lineage-21.0
+if wget "https://raw.githubusercontent.com/LineageOS/android_vendor_lineage/refs/heads/lineage-21.0/config/BoardConfigKernel.mk" -O $(realpath .)/vendor/lineage/config/BoardConfigKernel.mk; then
+    echo "Successfully downgraded BoardConfigKernel.mk"
 else
-    echo "Symlinking ld.bfd to ld.lld was unsuccessful, please apply manually"
+    echo "Downgrading BoardConfigKernel.mk failed, please downgrade it manually"
     exit 1
 fi
 
